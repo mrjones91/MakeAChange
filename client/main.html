@@ -1,0 +1,43 @@
+<head>
+  <title>achange</title>
+</head>
+
+<body>
+
+</body>
+
+<template name="home">
+  <h2>Make A Change</h2>
+
+  <p>Help your community and causes by donating your spare change.</p>
+  <p>We all have a few coins left over at the end of the month. Plenty of dollars that we find in our other pocket, in the couch, or even extra cash that we throw at things that we know we don't need.</p>
+  <p>Instead of regretting these spending decisions or feeling lost in how to manage our money, let's put these extra currency to use by supporting the change we want to see in the world.</p>
+  <br/> <br/>
+  <p>Join us in making a change!</p>
+
+  <a href="/signIn"> <button >Sign In</button> </a>
+</template>
+
+<template name="signIn">
+
+  <input type="text" id="usr"/>
+  <input type="text" id="pwd"/>
+
+  <a href=""> <button >Sign In</button> </a>
+  {{> loginButtons}}
+</template>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>

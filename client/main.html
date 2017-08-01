@@ -1,30 +1,104 @@
 <head>
   <title>achange</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
 </head>
 
 <body>
+  <style>
+    .content {
+      margin-left: 10%; 
+      margin-right: 10%;
+      margin-top: 5%;
+      width: 80%;
+      max-height: 100vh;
+    }
 
+    p {
+      font-size: 1.5em;
+    }
+
+    .fundImg {
+      max-width: 100px;
+    }
+  </style>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+
+  {{> header}}
 </body>
 
 <template name="home">
-  <h2>Make A Change</h2>
+  <div class="center content"> 
+    <h2>Make A Change</h2>
 
-  <p>Help your community and causes by donating your spare change.</p>
-  <p>We all have a few coins left over at the end of the month. Plenty of dollars that we find in our other pocket, in the couch, or even extra cash that we throw at things that we know we don't need.</p>
-  <p>Instead of regretting these spending decisions or feeling lost in how to manage our money, let's put these extra currency to use by supporting the change we want to see in the world.</p>
-  <br/> <br/>
-  <p>Join us in making a change!</p>
+    <p>Help your community and causes by donating your spare change.</p>
+    <p>We all have a few coins left over at the end of the month. Plenty of dollars that we find in our other pocket, in the couch, or even extra cash that we throw at things that we know we don't need.</p>
+    <p>Instead of regretting these spending decisions or feeling lost in how to manage our money, let's put these extra currency to use by supporting the change we want to see in the world.</p>
+    <br/>
+    <p>Join us in making a change!</p>
 
-  <a href="/signIn"> <button >Sign In</button> </a>
+    <a href="/signIn"> <button >Sign In</button> </a>
+  </div>
 </template>
 
 <template name="signIn">
+  <div class="content">
+    <h2>Sign In</h2>
+    <input type="text" id="usr" placeholder="email@you.com"/>
+    <input type="text" id="pwd" placeholder="Passw0rd"/>
 
-  <input type="text" id="usr"/>
-  <input type="text" id="pwd"/>
+    <a href=""> <button >Sign In</button> </a>
+    <!-- {{> loginButtons}} -->
+  </div>
+</template>
 
-  <a href=""> <button >Sign In</button> </a>
-  {{> loginButtons}}
+<template name="funds">
+  <div class="content">
+    <h2>Funds</h2>
+
+    {{> aFund}}
+    {{> aFund}}
+    {{> aFund}}
+    {{> aFund}}
+   
+  </div>
+
+
+</template>
+<template name="aFund">
+   <div>
+      <img class="circle fundImg left" src="http://res.cloudinary.com/dijital-technologies/image/upload/v1453853654/dij/logo.png"/>
+      <h3> Fund Title</h3> 
+      <a href="" class="right"><button>¢hange</button></a>
+      
+      <p class="truncate">this is a description of the fund that gives a the tale of why you should fund their tail because reasons</p>
+      
+    </div>
+</template>
+
+<template name="help">
+    <div class="content flow-text">
+      <h2>Help</h2>
+
+      <p>Help your community and causes by donating your spare change.</p>
+    <p>We all have a few coins left over at the end of the month. Plenty of dollars that we find in our other pocket, in the couch, or even extra cash that we throw at things that we know we don't need.</p>
+    <p>Instead of regretting these spending decisions or feeling lost in how to manage our money, let's put these extra currency to use by supporting the change we want to see in the world.</p>
+    <br/> <br/>
+    <p>Join us in making a change!</p>
+    </div>
+</template>
+
+<template name="account">
+</template>
+
+<template name="header">
+  <a href="/"> <button >Home</button> </a>
+  <a href="/funds"> <button>Funds</button></a>
+  <a href="/account"> <button >Account</button> </a>
+  <a href="/help"> <button >Help</button> </a>
+  <a href="/signIn"> <button >Sign Out</button> </a>
 </template>
 
 <template name="hello">

@@ -20,3 +20,15 @@ Template.hello.events({
     instance.counter.set(instance.counter.get() + 1);
   },
 });
+
+Template.aFund.events({
+  // 'click .modal-trigger'() {
+  //   $('#fundModal').modal();
+
+  // }
+  'click .fundBtn'(e) {
+    console.log(e.target);
+    e.target.addClass('green');
+    e.target.removeClass('blue');
+  }
+});

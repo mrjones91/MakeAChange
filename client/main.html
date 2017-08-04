@@ -28,6 +28,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
 
   {{> header}}
+
 </body>
 
 <template name="home">
@@ -136,24 +137,32 @@
     <div class="content flow-text">
       <h2>Help</h2>
 
-      <p>Help your community and causes by donating your spare change.</p>
+    <p>Help your community and causes by donating your spare change.</p>
     <p>We all have a few coins left over at the end of the month. Plenty of dollars that we find in our other pocket, in the couch, or even extra cash that we throw at things that we know we don't need.</p>
     <p>Instead of regretting these spending decisions or feeling lost in how to manage our money, let's put these extra currency to use by supporting the change we want to see in the world.</p>
-    <br/> <br/>
+
     <p>Join us in making a change!</p>
     </div>
 </template>
 
 <template name="account">
-  <p>Total Donations: <input type="number" value="$"/></p>
+  <p>Total Donations: $<input type="number" value="$" min="1" max="1000" style="width: 100px; align-content:center; font-size:1.5em;"/></p>
+
+  {{> funds }}
 </template>
 
 <template name="header">
-  <a class="btn" href="/"> Home </a>
-  <a class="btn" href="/funds">Funds</a>
-  <a class="btn" href="/account"> Account</a>
-  <a class="btn" href="/help"> Help </a>
-  <a class="btn" href="/signIn"> Sign Out</a>
+  <nav class="blue">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right">
+        <li><a class="btn" href="/"> Home </a></li>
+        <li><a class="btn" href="/funds">Funds</a></li>
+        <li><a class="btn" href="/account"> Account</a></li>
+        <li><a class="btn" href="/help"> Help </a></li>
+        <li><a class="btn" href="/signIn"> Sign Out</a></li>
+      </ul>
+    </div>
+  </nav>
 </template>
 
 <template name="hello">

@@ -27,8 +27,15 @@ Template.aFund.events({
 
   // }
   'click .fundBtn'(e) {
-    console.log(e.target);
-    e.target.addClass('green');
-    e.target.removeClass('blue');
+    console.log(e.target.getAttribute('target'));
+    var targetName = e.target.getAttribute('target');
+    var targetModal = document.getElementById(targetName);
+    // console.log(tng);
+    $(targetModal).modal();
+    $(targetModal).modal('open');
+    // e.target.addClass('green');
+    // e.target.removeClass('blue');
+    //$('#fundModal').modal();
+    
   }
 });

@@ -40,24 +40,36 @@
     <p>Instead of regretting these spending decisions or feeling lost in how to manage our money, let's put these extra currency to use by supporting the change we want to see in the world.</p>
     <br/>
     <p>Join us in making a change!</p>
-
-    <a class="btn" href="/signIn"> Sign In </a>
+    {{#if currentUser}}
+      <a class="btn" href="/funds">Find a Fund</a>
+    {{else}}
+      <a class="btn" href="/signIn"> Sign In </a>
+    {{/if}}
+    
   </div>
 </template>
 
 <template name="signIn">
   <div class="content">
-    <h2>Sign In</h2>
-    <input type="text" id="usr" placeholder="email@you.com"/>
-    <input type="text" id="pwd" placeholder="Passw0rd"/>
-
-    <a class="btn" href=""> Sign In </a>
-    <!-- {{> loginButtons}} -->
+      {{#if currentUser}}
+        Hi!
+      {{else}}
+        <h2>Sign In</h2>
+        <input type="text" id="usr" placeholder="email@you.com"/>
+        <input type="password" id="pwd" placeholder="Passw0rd"/>
+    
+        <a class="btn" href=""> Sign In </a>
+        <!-- {{> loginButtons}} -->
+      {{/if}}
+    
   </div>
 </template>
 
 <template name="funds">
   <div class="content">
+    <div id="paypalContent">
+    </div>
+
     <h2>Funds</h2>
 
     {{> aFund}}
@@ -83,6 +95,8 @@
         <!--value = 1 / totalFunds  -->
         <!-- <p>Donate <input type="number" min="1" max="95" /> % of your monthly donation to this</p> -->
         <p>Add this Fund to your </p>
+        {{> fundIt}}
+        
       </div>
       <div class="modal-footer">
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -97,40 +111,53 @@
 <template name="fundIt">
   <div class="content">
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="S3U8UYZGDQP94">
-<table>
-<tr><td><input type="hidden" name="on0" value="Change Options">Change Options</td></tr><tr><td><select name="os0">
-	<option value="Option1">1 : $1.00 USD - monthly</option>
-	<option value="Option5">5 : $5.00 USD - monthly</option>
-	<option value="Option10">10 : $10.00 USD - monthly</option>
-	<option value="Option25">25 : $25.00 USD - monthly</option>
-	<option value="Option50">50 : $50.00 USD - monthly</option>
-	<option value="Option75">75 : $75.00 USD - monthly</option>
-	<option value="Option100">100 : $100.00 USD - monthly</option>
-	<option value="Option150">150 : $150.00 USD - monthly</option>
-</select> </td></tr>
-</table>
-<input type="hidden" name="currency_code" value="USD">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_xclick-subscriptions">
-<input type="hidden" name="business" value="me@mybusiness.com">
-<input type="hidden" name="currency_code" value="USD">
-<input type="hidden" name="no_shipping" value="1">
-<input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but20.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
-<input type="hidden" name="a3" value="5.00">
-<input type="hidden" name="p3" value="1">
-<input type="hidden" name="t3" value="M">
-<input type="hidden" name="src" value="1">
-<input type="hidden" name="sra" value="1">
-</form>
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="S3U8UYZGDQP94">
+      <table>
+      <tr><td><input type="hidden" name="on0" value="Change Options">Change Options</td></tr><tr><td><select name="os0">
+        <option value="1">1 : $1.00 USD - monthly</option>
+        <option value="5">5 : $5.00 USD - monthly</option>
+        <option value="10">10 : $10.00 USD - monthly</option>
+        <option value="25">25 : $25.00 USD - monthly</option>
+        <option value="50">50 : $50.00 USD - monthly</option>
+        <option value="75">75 : $75.00 USD - monthly</option>
+        <option value="100">100 : $100.00 USD - monthly</option>
+        <option value="150">150 : $150.00 USD - monthly</option>
+      </select> </td></tr>
+      </table>
+      <input type="hidden" name="currency_code" value="USD">
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
+      
 
 
   </div>
+</template>
+
+<template name="1">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="Q7AKGH9TAAY7S">
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+</template>
+<template name="10">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="4L8KGR4UTXNAN">
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>      
+</template>
+<template name="50">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="XMBHDPDNY25XA">
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
 </template>
 
 <template name="help">
@@ -146,9 +173,25 @@
 </template>
 
 <template name="account">
-  <p>Total Donations: $<input type="number" value="$" min="1" max="1000" style="width: 100px; align-content:center; font-size:1.5em;"/></p>
+  <div class="row">
+      <div class="input-field col s3">
+        <span><h5>Donation Amount: $</h5></span>
+      </div>
+        <div class="input-field col s1">
+        <select>
+            <option value="1">$1</option>
+            <option value="10">$10</option>
+            <option value="50">$50</option>
+        </select>
+        </div>
+      <!-- <input title="How much do you want to donate to each fund?" type="number" value="$" min="1" max="1000" style="width: 100px; align-content:center; font-size:1.5em;"/> -->
+  </div>
+    {{> funds }}
 
-  {{> funds }}
+    <A HREF="https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=4AARJ4YVC64NA">
+      <IMG SRC="https://www.paypalobjects.com/en_US/i/btn/btn_unsubscribe_LG.gif" BORDER="0">
+    </A>
+  
 </template>
 
 <template name="header">
@@ -159,7 +202,11 @@
         <li><a class="btn" href="/funds">Funds</a></li>
         <li><a class="btn" href="/account"> Account</a></li>
         <li><a class="btn" href="/help"> Help </a></li>
-        <li><a class="btn" href="/signIn"> Sign Out</a></li>
+        {{#if currentUser}}
+          <li><a id="logout" class="btn"> Sign Out</a></li>
+        {{else}}
+          <li><a class="btn" href="/signIn"> Sign In</a></li>
+        {{/if}}
       </ul>
     </div>
   </nav>

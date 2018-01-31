@@ -95,7 +95,7 @@
         <!--value = 1 / totalFunds  -->
         <!-- <p>Donate <input type="number" min="1" max="95" /> % of your monthly donation to this</p> -->
         <p>Add this Fund to your </p>
-        {{> fundIt}}
+        {{> fundIt }}
         
       </div>
       <div class="modal-footer">
@@ -139,38 +139,40 @@
     <div class="content flow-text">
       <h2>Help</h2>
 
-    <p>Help your community and causes by donating your spare change.</p>
-    <p>We all have a few coins left over at the end of the month. Plenty of dollars that we find in our other pocket, in the couch, or even extra cash that we throw at things that we know we don't need.</p>
-    <p>Instead of regretting these spending decisions or feeling lost in how to manage our money, let's put these extra currency to use by supporting the change we want to see in the world.</p>
+      <p>Help your community and causes by donating your spare change.</p>
+      <p>We all have a few coins left over at the end of the month. Plenty of dollars that we find in our other pocket, in the couch, or even extra cash that we throw at things that we know we don't need.</p>
+      <p>Instead of regretting these spending decisions or feeling lost in how to manage our money, let's put these extra currency to use by supporting the change we want to see in the world.</p>
 
-    <p>Join us in making a change!</p>
+      <p>Join us in making a change!</p>
     </div>
 </template>
 
 <template name="account">
   <div class="row">
-      <div class="input-field col s3">
-        <span><h5>Donation Amount: $</h5></span>
+      <div class="input-field col s4">
+        Manage your funding amounts and subscription via Paypal
+        <A HREF="https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=4AARJ4YVC64NA">
+          <IMG SRC="https://www.paypalobjects.com/en_US/i/btn/btn_unsubscribe_LG.gif" BORDER="0">
+        </A>
+        <!-- <span><h5>Donation Amount: $</h5></span> -->
       </div>
-        <div class="input-field col s1">
+        <!-- <div class="input-field col s1">
         <select>
             <option value="1">$1</option>
             <option value="10">$10</option>
             <option value="50">$50</option>
         </select>
-        </div>
+        </div> -->
       <!-- <input title="How much do you want to donate to each fund?" type="number" value="$" min="1" max="1000" style="width: 100px; align-content:center; font-size:1.5em;"/> -->
   </div>
     {{> funds }}
 
-    <A HREF="https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=4AARJ4YVC64NA">
-      <IMG SRC="https://www.paypalobjects.com/en_US/i/btn/btn_unsubscribe_LG.gif" BORDER="0">
-    </A>
+   
   
 </template>
 
 <template name="header">
-  <nav class="blue">
+  <nav class="white">
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="right">
         <li><a class="btn" href="/"> Home </a></li>

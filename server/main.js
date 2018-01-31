@@ -18,4 +18,9 @@ Meteor.methods({
     }
     return true;
   }
-});
+}
+
+//method to save fund to user account
+//method to retrieve user's funds for account page
+//
+);

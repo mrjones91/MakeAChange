@@ -1,1 +1,29 @@
 /* CSS declarations go here */
+
+.btn {
+    background-color: #62ac37 !important; 
+}
+
+#usr {
+    color: black;
+}
+
+#pwd {
+    color: black;
+}
+
+input::-webkit-input-placeholder {
+    color: rgb(0, 183, 255) !important;
+    }
+     
+    input:-moz-placeholder { /* Firefox 18- */
+    color: rgb(0, 183, 255) !important;  
+    }
+     
+    input::-moz-placeholder {  /* Firefox 19+ */
+    color: rgb(0, 183, 255) !important;  
+    }
+     
+    input:-ms-input-placeholder {  
+    color: rgb(0, 183, 255) !important;  
+    }
